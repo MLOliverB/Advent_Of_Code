@@ -22,7 +22,6 @@ with open(os.getcwd() + "\\2020\\day_2\\day_2-input.txt", 'r') as file:
         else:
             is_pos_2 = False
 
-        print(text, range, letter, is_pos_1, is_pos_2, is_pos_1 ^ is_pos_2)
         if is_pos_1 ^ is_pos_2:
             valid_count += 1
 
