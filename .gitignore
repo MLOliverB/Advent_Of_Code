@@ -1,3 +1,6 @@
+# Ignore solutions of 2021 (until end of competition)
+2021/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
