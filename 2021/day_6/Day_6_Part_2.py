@@ -1,6 +1,5 @@
 import os
 import numpy as np
-from datetime import datetime
 
 current_day = 0
 days = 256

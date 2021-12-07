@@ -1,6 +1,5 @@
 import os
 import numpy as np
-from datetime import datetime
 
 current_day = 0
 days = 80
@@ -21,19 +20,10 @@ while current_day < days:
     print(f"\rProcessing: {current_day} / {days}" + " " * (days % 10), end=" ")
     # decrease all timings by one
     fish_timers -= 1
-    #t0 = datetime.now()
     new_fish = (fish_timers < 0).sum()
-    #t1 = datetime.now()
     fish_timers[fish_timers < 0] = 6
-    #fish_timers = np.where(fish_timers < 0, 6, fish_timers)
-    #t2 = datetime.now()
     if new_fish > 0:
         fish_timers = np.concatenate((fish_timers, np.full(new_fish, 8, dtype=np.short)))
-    #t3 = datetime.now()
-    #delta1 = (t1-t0).microseconds/1000
-    #delta2 = (t2-t1).microseconds/1000
-    #delta3 = (t3-t2).microseconds/1000
-    #print(f"Counting -1: {delta1} - Resetting: {delta2} - Concatenating: {delta3}")
 
     current_day += 1
 
