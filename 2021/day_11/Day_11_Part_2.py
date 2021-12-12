@@ -92,13 +92,13 @@ for i in range(1, row_size+1):
 
 octopus_graph = Graph(vertices, edges)
 
-steps = 100
-flash_sum = 0
+sync_step = -1
 
 #print_matrix(octopus_matrix, True)
 
 step = 1
-while step <= steps:
+while True:
+    flash_sum = 0
     for octopus in octopus_graph.vertices:
         octopus.flashed = False
     flash_q = []
@@ -124,6 +124,9 @@ while step <= steps:
         if octopus.energy > 9:
             octopus.energy = 0
     #print_matrix(octopus_matrix, True)
+    if flash_sum == len(octopus_graph.vertices):
+        sync_step = step
+        break
     step += 1
 
-print("Total number of octopus flashes {}".format(flash_sum))
+print("First step of synchronized flashes {}".format(sync_step))
