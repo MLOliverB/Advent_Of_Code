@@ -41,7 +41,7 @@ sheet = np.zeros((max_y+1, max_x+1), dtype=bool)
 for dot in input_dots:
     sheet[dot[1], dot[0]] = True
 
-for fold in folds[:1]:
+for fold in folds:
     axis, pos = fold
     if axis == 'x':
         # X fold (vertical)
@@ -56,5 +56,12 @@ for fold in folds[:1]:
         folding_sheet = np.flip(folding_sheet, axis=0)
         sheet = (new_sheet | folding_sheet)
 
-print("The number of dots after the first fold: {}".format(sheet.sum()))
+print("The code is:")
+for row in range(sheet.shape[0]):
+    for col in range(sheet.shape[1]):
+        if sheet[row][col]:
+            print("#", end=' ')
+        else:
+            print(" ", end=' ')
+    print()
 
