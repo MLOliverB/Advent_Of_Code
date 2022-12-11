@@ -10,7 +10,7 @@ def solve(day_num, input_file_name):
         day_num,
         "Sum of the signal strengths during the 20th, 60th, 100th, 140th, 180th, and 220th cycles",
         signal_strength_sum,
-        "Rendered display of the CRT display",
+        "Rendered text of the CRT display",
         render(screen_grid, return_string=True)
     )
 
