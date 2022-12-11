@@ -5,7 +5,9 @@ def read_input(f_name):
     return str_lst
 
 def result_print(day_num, part_1_description, part_1_result, part_2_description, part_2_result):
-    max_text_len = max((len(str(part_1_description)), len(str(part_1_result)), len(str(part_2_description)), len(str(part_2_result))))
+    part_1_result_len = max(len(str(line)) for line in part_1_result) if type(part_1_result) == list else len(str(part_1_result))
+    part_2_result_len =  max(len(str(line)) for line in part_2_result) if type(part_2_result) == list else len(str(part_2_result))
+    max_text_len = max((len(str(part_1_description)), part_1_result_len, len(str(part_2_description)), part_2_result_len))
     dash_len = max(3, int((max_text_len-(len(f" Day {day_num} ")))/2)+1)
     dashes = dash_len*'─'
     print(f"\n\n {dashes} Day {day_num} {dashes}")
