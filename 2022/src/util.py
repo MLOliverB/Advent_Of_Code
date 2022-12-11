@@ -12,8 +12,16 @@ def result_print(day_num, part_1_description, part_1_result, part_2_description,
     print('|')
     print('|', "Part 1")
     print('|', part_1_description)
-    print('|', part_1_result)
+    if type(part_1_result) == list:
+        for item in part_1_result:
+            print('|', item)
+    else:
+        print('|', part_1_result)
     print('|')
     print('|', "Part 2")
     print('|', part_2_description)
-    print('|', part_2_result)
+    if type(part_2_result) == list:
+        for item in part_2_result:
+            print('|', item)
+    else:
+        print('|', part_2_result)
